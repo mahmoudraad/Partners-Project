@@ -20,13 +20,11 @@ export default class App extends React.Component {
 
 FetchPartners= (text) => {
   this.setState({ TextRange: text });
-  console.log(API_URL)
     if(!isNaN(text))
     {
         fetch(API_URL + '/ReadFromJsonFile?KilometerRange=' + (text != "" ? text : 0) )
         .then((response) => response.json())
         .then((responseJson) => {
-console.log(responseJson)
     this.setState({ dataSource: responseJson  });
 
         })
@@ -104,18 +102,10 @@ const styles = StyleSheet.create({
   },
   item: {
     backgroundColor: '#f9c2ff',
-    // justifyContent:"center",
-    // alignItems: "center",
-    // marginVertical: 8,
-    // marginHorizontal: 16,
     width:200
   },
   item2: {
     backgroundColor: '#f9c2ff',
-    // justifyContent:"center",
-    // alignItems: "center",
-    // marginVertical: 8,
-    // marginHorizontal: 60,
     width:400
   },
   title: {
